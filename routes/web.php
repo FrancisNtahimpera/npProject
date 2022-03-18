@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ProductController;
+use App\Models\ProductModel;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Name;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/',  'App\Http\Controllers\ArticleController');
- 
+Route::resource('/',  'App\Http\Controllers\ProductController');
+//Route::resource('/details', [ProductController::class , 'show' ]);  
 
 //Route::resource('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/detail', function(){
-    return view('detail');
-});
+//Route::get('/detail', [ ArticleController::class , 'index' ]);

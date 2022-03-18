@@ -32,47 +32,32 @@
     <!-- <img src="https://www.john-taylor.fr/vente-villa-dubailand-ori100-V0058DU-55746666.jpg?datetime=2020-05-11" class=" img-fluid" alt="..."> -->
 
     <div class=" p-md-3   row row-cols-lg-auto g-3 align-items-center">
+      
+    @if ($posts->count() > 0 )
+       @foreach ( $posts  as $post )
+           
+      
         <div class="col-12 col-md-6 col-lg-4 mt-3">
             <div class="card text-center">
-                <img name="gallery" src="https://www.villanovo.fr/photos/4635/algarve-villa-isaya-17743459165c70017d4d54e8.58529773.1920.jpg"
+                <img name="gallery" src="{{ $post ->image }}"
                     alt="" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title" name="name">Appartement</h5>
-                    <p class="card-text"name="description">lorem zeijiofz zijfez ozi zjoizejfz jfiojiozjfzojfozij ziefjezoefj
-                        zioefjziojiezj fjozejifj zfjzoeifj</p>
-                        <span name="price">5245 euros</span>
-                        <p name ="category">categorie</p>
-                    <a href="#" class="btn btn-primary">details</a>
+                    <h5 class="card-title" name="name"> {{ $post ->title }}</h5>
+                    <p class="card-text"name="description"> {{ $post ->content }}</p>
+                        <span name="price">{{ $post ->price }} euros</span>
+                        <p name ="category">{{ $post ->category }}</p>
+                    <a href="  " class="btn btn-primary">details</a>
                 </div>
             </div>
+            
+           
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mt-3">
-            <div class="card text-center">
-                <img src="http://d1ovmfk4rp967b.cloudfront.net/wp-content/uploads/2014/10/Casita378_17.jpg" alt=""
-                    class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Appartement</h5>
-                    <p class="card-text">lorem zeijiofz zijfez ozi zjoizejfz jfiojiozjfzojfozij ziefjezoefj
-                        zioefjziojiezj fjozejifj zfjzoeifj</p>
-                    <a href="#" class="btn btn-primary">details</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 mt-3">
-            <div class="card text-center">
-                <img src="https://www.villanovo.fr/photos/1624/ile-maurice-est-villa-heaven-28995237158063baee94746.02526971.1920.jpg"
-                    alt="" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Appartement</h5>
-                    <p class="card-text">lorem zeijiofz zijfez ozi zjoizejfz jfiojiozjfzojfozij ziefjezoefj
-                        zioefjziojiezj fjozejifj zfjzoeifj</p>
-                    <a href="#" class="btn btn-primary">details</a>
-                </div>
-            </div>
-        </div>
-
+        @endforeach
+        @else
+            <span>pas de donnée verifier connection </span>
+        @endif
+         
     </div>
-
-</div>
+ 
 
 @endsection

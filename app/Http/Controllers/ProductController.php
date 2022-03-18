@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use App\Models\Article;
+use App\Models\Product;
 
-class ArticleController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,13 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        return view('article');
-    }
+
+        $posts=Product::all();
+        //dd($posts);
+;
+        return view('products' ,[
+            'posts' => $posts
+        ] );    }
 
     /**
      * Show the form for creating a new resource.
@@ -49,7 +53,6 @@ class ArticleController extends Controller
     public function show($id)
     {
         //
-        
     }
 
     /**
