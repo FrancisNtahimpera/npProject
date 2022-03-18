@@ -46,7 +46,7 @@
                     <p class="card-text"name="description"> {{ $post ->content }}</p>
                         <span name="price">{{ $post ->price }} euros</span>
                         <p name ="category">{{ $post ->category }}</p>
-                    <a href="  " class="btn btn-primary">details</a>
+                    <a href="{{route('details' , [ 'id' => $post->id ] ) }}" class="btn btn-primary">details</a>
                 </div>
             </div>
             
