@@ -18,7 +18,7 @@ class ProductController extends Controller
 
         $posts=Product::all();
         //dd($posts);
-;
+
         return view('products' ,[
             'posts' => $posts
         ] );    }
@@ -91,6 +91,14 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        $post =Product::find($id);
+        //dd($post);
+        return view('update' ,[
+            'post' => $post
+        ] );
+        
+        
+        
     }
 
     /**
@@ -103,6 +111,19 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+          
+        $post =Product::find($id);
+        //dd($post);
+        $post->title =  $request->title;
+        $post->image =  $request->image;
+        $post->content =  $request->content;
+        $post->price =  $request->price;
+        $post->update();
+
+        return redirect('detail')->with('satus', 'modification ok okaaaay');
+
+       
+        
     }
 
     /**

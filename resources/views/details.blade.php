@@ -23,13 +23,13 @@
         </div>
         <div class="col-md-7">
             <div class="card">
-                
-                <div class="about"> <h1 class="font-weight-bold text-red-50">{{ $post ->title }}</h1>
-                    <h4 class="font-weight-bold">{{ $post ->price }} euros</h4>
+                @csrf
+                <div class="about"> <h1 class="font-weight-bold text-red-50">{{ $post->title }}</h1>
+                    <h4 class="font-weight-bold">{{ $post->price }} euros</h4>
                 </div>
                 <div class="buttons"> <button class="btn btn-outline-warning btn-long cart">Add to Cart</button> 
                     <button class="btn btn-warning btn-long buy">Buy it Now</button>
-                    <button class="btn btn-warning btn-long buy">Edit</button>
+                    <a href="{{route('update' , [ 'id' => $post->id ] ) }}" class="btn btn-warning btn-long buy">Edit</a>
                     <button class="btn btn-warning btn-long buy">erase</button>
                      <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> 
                      <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> 

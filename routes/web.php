@@ -26,6 +26,9 @@ Route::post('/create', [ProductController::class ,  'store'] )->name('store');
 
 
 Route::get('/details/{id}', [ProductController::class ,  'show'] )->name('details');  
+
+Route::get('/update/{id}', [ProductController::class ,  'edit'] )->name('update');  
+Route::put('/update/{id}', [ProductController::class ,  'update'] )->name('update');  
  
 
 //Route::resource('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
