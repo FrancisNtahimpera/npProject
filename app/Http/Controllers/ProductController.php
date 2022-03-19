@@ -31,6 +31,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+        return view('create');
     }
 
     /**
@@ -42,6 +43,27 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+
+
+        Product::create([
+            'title' => $request->title ,
+            'content' => $request->content ,
+            'image' => $request->image ,
+            'price' => $request->price ,
+            'category' => $request->category ,
+
+        ]);
+        // $post = new Product();
+         
+
+        // $post->title = $request->title;
+        // $post->content = $request->content;
+        // $post->image = $request->image;
+        // $post->price = $request->price;
+        // $post->category = $request->category;
+
+        // $post->save;
+        dd('post cre');
     }
 
     /**
@@ -53,10 +75,10 @@ class ProductController extends Controller
     public function show($id)
     {
         //
-        $post = Product::find($id);
-        dd($post);
+        $post = Product::findOrFail($id);
+       
         return view('details' , [
-            '$post' =>$post
+            'post' =>$post
         ]);
     }
 

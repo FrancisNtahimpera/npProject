@@ -480,6 +480,9 @@
                 <a class="nav-link" href="#">FAVORIS</a>
               </div>
               <div class="nav-item">
+                <a class="nav-link" href="  {{ route('create') }}   ">creer</a>
+              </div>
+              <div class="nav-item">
                 <a class="nav-link" href="#">CONNEXION</a>
               </div>
               <div class="nav-item">

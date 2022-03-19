@@ -17,7 +17,16 @@ use PhpParser\Node\Name;
 */
 
 Route::get('/',  [ProductController::class, 'index']);
+
+
+
+Route::get('/create', [ProductController::class ,  'create'] )->name('create'); 
+Route::post('/create', [ProductController::class ,  'store'] )->name('store'); 
+
+
+
 Route::get('/details/{id}', [ProductController::class ,  'show'] )->name('details');  
+ 
 
 //Route::resource('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/detail', [ ArticleController::class , 'index' ]);
