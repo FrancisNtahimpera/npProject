@@ -1,27 +1,27 @@
 @extends('welcome')
 @section('content')
-    <div id="content" class="p-4 p-md-5 pt-5  ">
-        <h1 class="text-lg-center">CREATE A NEW POST</h1>
+    <div id="content" class="p-4 pt-5 p-md-5 "><br><br><br><br>
+        <h1 class="text-lg-center">CREATE A NEW POST</h1><br><br>
 
-        <div class="container-fluid mt-2 mb-3">
+        <div class="mt-2 mb-3 container-fluid">
             <form class="row no-gutters " method="POST" action="{{ route('store') }}">
                 @csrf
-                <div class="col-md-5 pr-2">
+                <div class="pr-2 col-md-5 ">
                     <div class="mb-3">
                         <label for="title" class="form-label">TITLE</label>
                         <input type="text" name="title" class="form-control" id="title"
                             placeholder="big house">
-                    </div>
+                    </div><br><br>
                     <div>
                         <label for="title" class="form-label">Price</label>
                         <input type="text" name="price" class="form-control" id="title"
                             placeholder="45622 euros">
-                    </div> 
+                    </div> <br><br>
                     <div>
                         <label for="category" class="form-label">category</label>
                         <input type="text" name="category" class="form-control" id="category"
                             placeholder="appartment, house , ">
-                    </div> 
+                    </div> <br><br>
                     
                     
                 </div>
@@ -29,16 +29,16 @@
                     <div class="mb-3">
                         <label for="content" class="form-label">Description</label>
                         <textarea class="form-control" name="content" id="content" rows="3"></textarea>
-                    </div>
-                    <div class="card mt-2"> 
+                    </div><br><br>
+                    <div class="mt-2 card"> 
                          
                             <label for="image" class="form-label">IMAGE</label>
                             <input type="text" name="image" class="form-control" id="image1"
-                                placeholder="img link  ">
+                                placeholder="img link  "><br><br><br><br>
                         
 
-                    </div><button type="submit" class=" btn btn-primary">CREATE</button>
-                </div>
+                    </div>
+                </div><br><br><button type="submit" class=" btn btn-primary">CREATE</button>
                  
             </form>
         </div>

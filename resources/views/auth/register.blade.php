@@ -3,7 +3,7 @@
 
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
+        <x-slot name="logo">vffvddvdfvdvddvdvd
             <a href="/">
                 <x-application-logo class="w-20 h-20 text-gray-500 fill-current" />
             </a>

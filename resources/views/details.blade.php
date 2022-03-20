@@ -1,5 +1,5 @@
 @extends('welcome')
-@section('content')
+@section('content')<br><br><br><br>
 <div id="content" class="p-4 pt-5 p-md-5 ">
     <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 <div class="mt-2 mb-3 container-fluid">
@@ -12,8 +12,7 @@
                         <li data-thumb="{{ $post ->image }}"> <img src="{{ $post ->image }}" /> </li>
                         <li data-thumb="{{ $post ->image }}"> <img src="{{ $post ->image }}" /> </li>
                         <li data-thumb="{{ $post ->image }}"> <img src="{{ $post ->image }}" /> </li>
-                        <li data-thumb="{{ $post ->image }}"> <img src="{{ $post ->image }}" /> </li>
-                         
+                        <li data-thumb="{{ $post ->image }}"> <img src="{{ $post ->image }}" /> </li>                        
                     </ul>
                 </div>
             </div>

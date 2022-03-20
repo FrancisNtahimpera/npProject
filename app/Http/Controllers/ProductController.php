@@ -44,7 +44,7 @@ class ProductController extends Controller
     {
         //
 
-
+        
         Product::create([
             'id'   => $request->id,
             'title' => $request->title ,
@@ -54,7 +54,9 @@ class ProductController extends Controller
             'category' => $request->category ,
 
         ]);
-        return redirect("/");
+        
+       
+        return redirect('/');
         // $post = new Product();
          
 
@@ -122,7 +124,7 @@ class ProductController extends Controller
         $post->price =  $request->price;
         $post->update();
 
-        return redirect('/')->with('status', 'modification ok okaaaay');
+        return redirect()->route('details', ['id' => $id]) ;
 
        
         
@@ -144,4 +146,9 @@ class ProductController extends Controller
 
 
     }
+   
+
+    
+
+   
 }
