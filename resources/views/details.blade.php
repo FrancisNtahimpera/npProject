@@ -30,7 +30,7 @@
                 <div class="buttons"> <button class="btn btn-outline-warning btn-long cart">Add to Cart</button> 
                     <button class="btn btn-warning btn-long buy">Buy it Now</button>
                     <a href="{{route('update' , [ 'id' => $post->id ] ) }}" class="btn btn-warning btn-long buy">Edit</a>
-                    <button class="btn btn-warning btn-long buy">erase</button>
+                    <a href="{{route('delete' , [ 'id' => $post->id ] ) }}" class="btn btn-warning btn-long buy">erase</a>
                      <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> 
                      <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> 
                     </div>

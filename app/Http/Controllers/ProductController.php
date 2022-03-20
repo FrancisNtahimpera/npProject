@@ -120,7 +120,7 @@ class ProductController extends Controller
         $post->price =  $request->price;
         $post->update();
 
-        return redirect('detail')->with('satus', 'modification ok okaaaay');
+        return redirect('details')->with('status', 'modification ok okaaaay');
 
        
         
@@ -135,5 +135,11 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        $post= Product::find($id);
+        $post->delete();
+
+        dd($post);
+
+
     }
 }
