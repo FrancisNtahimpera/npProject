@@ -445,7 +445,7 @@
 <body class="antialiased">
 
  
-<div class="  wrapper  ">
+<div class=" wrapper">
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -454,9 +454,9 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <ul class="mb-2 navbar-nav me-auto mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">HOUSES</a>
@@ -464,9 +464,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">APPARTMENTS</a>
               </li>
+              @auth
+                  
               <li class="nav-item">
                 <a class="nav-link" href="#">PROFILE</a>
               </li>
+              @endauth
               <li class="nav-item">
                 <a class="nav-link" href="#">CONTACT</a>
               </li>
@@ -475,19 +478,22 @@
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-            
+            <div class="nav-item">
+                <a class="nav-link" href="/login">CONNEXION</a>
+              </div>
+              @auth
+                  
+              
               <div class="nav-item">
                 <a class="nav-link" href="#">FAVORIS</a>
               </div>
               <div class="nav-item">
                 <a class="nav-link" href="  {{ route('create') }}   ">creer</a>
               </div>
+              
               <div class="nav-item">
-                <a class="nav-link" href="#">CONNEXION</a>
-              </div>
-              <div class="nav-item">
-                <a class="nav-link" href="#">DECONNEXION</a>
-              </div>
+                <a class="nav-link" href="/register">DECONNEXION</a>
+              </div>@endauth
           </div>
         </div>
       </nav>
@@ -498,17 +504,17 @@
 
 
      
-<div class="mt-5 pt-5 pb-5 footer">
+<div class="pt-5 pb-5 mt-5 footer">
 <div class="container">
   <div class="row">
     <div class="col-lg-5 col-xs-12 about-company">
       <h2>Heading</h2>
       <p class="pr-5 text-white-50">Nous sommes une entreprise familial depuis cinq generations, nos client  sont "STar Company" , "Lead Power" et "StandForTips". </p>
-      <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+      <p><a href="#"><i class="mr-1 fa fa-facebook-square"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
     </div>
     <div class="col-lg-3 col-xs-12 links">
       <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-        <ul class="m-0 p-0">
+        <ul class="p-0 m-0">
           <li> <a href="#">HOUSES</a></li>
           <li> <a href="#">APPARTMENTS</a></li>
           <li> <a href="#">BUY</a></li>
@@ -519,11 +525,11 @@
     <div class="col-lg-4 col-xs-12 location">
       <h4 class="mt-lg-0 mt-sm-4">Location</h4>
       <p>56, rue du midi , 1050 Bruxelles</p>
-      <p class="mb-0"><i class="fa fa-phone mr-3"></i>02/589.23.98</p>
-      <p><i class="fa fa-envelope-o mr-3"></i>ntahimperafrancis@gmail.com.com</p>
+      <p class="mb-0"><i class="mr-3 fa fa-phone"></i>02/589.23.98</p>
+      <p><i class="mr-3 fa fa-envelope-o"></i>ntahimperafrancis@gmail.com.com</p>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="mt-5 row">
     <div class="col copyright">
       <p class=""><small class="text-white-50">© 2021 Classy Tegration.</small></p>
     </div>

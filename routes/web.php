@@ -1,9 +1,6 @@
 <?php
-
-use App\Http\Controllers\ProductController;
-use App\Models\ProductModel;
 use Illuminate\Support\Facades\Route;
-use PhpParser\Node\Name;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +12,9 @@ use PhpParser\Node\Name;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/',  [ProductController::class, 'index']);
+
+
 
 
 
@@ -34,8 +32,10 @@ Route::put('/update/{id}', [ProductController::class ,  'update'] )->name('updat
 Route::get('/delete/{id}', [ProductController::class ,  'destroy'] )->name('delete');
 
 
-  
  
 
-//Route::resource('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('/detail', [ ArticleController::class , 'index' ]);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

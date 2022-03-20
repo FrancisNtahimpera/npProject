@@ -1,10 +1,10 @@
 @extends('welcome')
 @section('content')
-<div id="content" class="p-4 p-md-5 pt-5  ">
+<div id="content" class="p-4 pt-5 p-md-5 ">
     <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
-<div class="container-fluid mt-2 mb-3">
+<div class="mt-2 mb-3 container-fluid">
     <div class="row no-gutters">
-        <div class="col-md-5 pr-2">
+        <div class="pr-2 col-md-5">
             <div class="card">
                 <div class="demo">
                     <ul id="lightSlider">
@@ -17,7 +17,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="card mt-2">
+            <div class="mt-2 card">
                 
             </div>
         </div>
@@ -27,6 +27,7 @@
                 <div class="about"> <h1 class="font-weight-bold text-red-50">{{ $post->title }}</h1>
                     <h4 class="font-weight-bold">{{ $post->price }} euros</h4>
                 </div>
+                @auth
                 <div class="buttons"> <button class="btn btn-outline-warning btn-long cart">Add to Cart</button> 
                     <button class="btn btn-warning btn-long buy">Buy it Now</button>
                     <a href="{{route('update' , [ 'id' => $post->id ] ) }}" class="btn btn-warning btn-long buy">Edit</a>
@@ -34,11 +35,12 @@
                      <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> 
                      <button class="btn btn-light wishlist"> <i class="fa fa-heart"></i> </button> 
                     </div>
+                @endauth
                 <hr>
                 <div class="product-description">
                     <div><span class="font-weight-bold"> </span><span>  </span></div>
                     <div class="my-color">  </div>
-                    <div class="d-flex flex-row align-items-center">   </div>
+                    <div class="flex-row d-flex align-items-center">   </div>
                     <div class="mt-2"> <span class="font-weight-bold">Description</span>
                         <p>{{ $post ->content }}</p>
                         
@@ -46,7 +48,7 @@
                     
                 </div>
             </div>
-            <div class="card mt-2"> {{ $post ->content }}
+            <div class="mt-2 card"> {{ $post ->content }}
                 
             </div>
         </div>
