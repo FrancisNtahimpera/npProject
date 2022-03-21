@@ -33,11 +33,11 @@ Route::put('/update/{id}', [ProductController::class ,  'update'] )->name('updat
 Route::get('/delete/{id}', [ProductController::class ,  'destroy'] )->name('delete');
 
 
-Route::get('/profile', [UsersController::class ,  'edit'])->middleware(['auth']);
+Route::get('/profile', [UsersController::class ,  'edit'])->name('profile')->middleware(['auth']);
 Route::put('/profile', [UsersController::class ,  'update'])->middleware(['auth']);
 
 
-Route::get('/favoris', [UsersController::class ,  'favoris'])->middleware(['auth']);
+Route::get('/favoris', [UsersController::class ,  'favoris'])->name('favoris')->middleware(['auth']);
 
 
 

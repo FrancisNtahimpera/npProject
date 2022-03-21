@@ -16,4 +16,16 @@ class Product extends Model
         'category'
 
     ];
+
+    public function favorite(){
+        $cid=auth()->guard('user')->user()!=null ? auth()->guard('user')->user():null;
+
+        return $this->belongsTo(Favoris::class, 'id' ,'product_id' )->where('customer_id', $cid);
+
+    }
+    public function like(){
+      
+        return $this->favorite()->selectRaw('product_id, count(*) as count')->groupBy('product_id');
+
+    }
 }

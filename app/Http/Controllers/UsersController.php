@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Favoris;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +17,7 @@ class UsersController extends Controller
     public function index()
     {
         //
+        
     }
 
     /**
@@ -73,8 +75,8 @@ class UsersController extends Controller
     {
         //
         $id = User::find(Auth::user()->id);
-        $id->name = $request->name;
-        $id->email = $request->email;
+        $id->name = $request->input('name');
+        $id->email = $request->input('email');
 
         $id->update();
         return redirect()->route('profile') ;
@@ -91,5 +93,17 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function favoris()
+    {
+        //
+        $prod = Favoris::all();
+        //dd( $productfavoris );
+        dd($prod);
+        
+        return view('favoris', [
+            'prod' => $prod
+        ]);
     }
 }

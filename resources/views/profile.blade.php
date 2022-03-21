@@ -4,7 +4,7 @@
         <br><br>
         <h1>PROFILE</h1><br><br>
         <p> Bonjour {{ Auth::user()->name }} et bienvenu sur ton profil utilisateur</p>
-        <form action="/profile-update" method="POST">
+        <form action="/profile" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
