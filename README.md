@@ -8,6 +8,7 @@
 ```
 Register, and modify profil.
 Post, modify and delete a building offer.
+IN PROGRESS : put an offer in favorite 
 
 ```
 
