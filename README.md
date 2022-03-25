@@ -20,5 +20,5 @@ IN PROGRESS : put an offer in favorite
  
  
   ## Data details
- 
+  
  Footer and  navbar informations are statics, all the rest come from the database. I will add an extern Api in the futur.
